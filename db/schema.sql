@@ -1,0 +1,11 @@
+USE aarse8j1scw1k7wf;
+
+CREATE TABLE burgers (
+	id int AUTO_INCREMENT NOT NULL,
+	burger_name VARCHAR(250) NOT NULL,
+	devoured BOOLEAN NOT NULL DEFAULT 0,
+	-- date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id)
+);
+
+SELECT * FROM burgers;
