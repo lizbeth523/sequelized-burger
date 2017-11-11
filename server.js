@@ -36,17 +36,21 @@ app.get("/", function(req, res) {
       var hbsObject = {
         burgers: dbBurger
       };
-      console.log(hsbObject);
+      console.log(hbsObject);
       res.render("index", hbsObject);
     });
   });
 
 app.use("/", burgerController);
 
-app.listen(port, function(error) {
-	if (error) {
-		throw error;
-	}
+db.sequelize.sync({ force: false }).then(function() {
+  app.listen(port, function(error) {
+    if (error) {
+      throw error;
+    }
 
-	console.log("Listening on port " + port);
+    console.log("Listening on port " + port);
+  });
 });
+
+
